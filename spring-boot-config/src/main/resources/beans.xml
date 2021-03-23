@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    <bean id="father" class="xyz.zfdu.boot.config.entity.Father">-->
+    <!--        <property name="name" value="Tom" />-->
+    <!--        <property name="age" value="48"/>-->
+    <!--    </bean>-->
+    <bean id="student" class="xyz.zfdu.boot.config.entity.Student">
+        <property name="id" value="123"/>
+        <property name="name" value="Tom" />
+        <!--        <property name="father" ref="father"/>-->
+    </bean>
+</beans>

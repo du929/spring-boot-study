@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.zfdu.boot.mybatis.mapper.TeacherMapper">
+  <resultMap id="teacherMap" type="xyz.zfdu.boot.mybatis.domain.Teacher">
+    <id column="teacher_id" jdbcType="INTEGER" property="teacherId" />
+    <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
+    <result column="clazz_id" jdbcType="INTEGER" property="clazzId" />
+  </resultMap>
+<!--  <select id="findAll" resultType="xyz.zfdu.boot.mybatis.domain.Teacher">-->
+<!--    SELECT *-->
+<!--    FROM t_teacher-->
+<!--  </select>-->
+  <select id="findAll" resultMap="teacherMap">
+    SELECT *
+    FROM t_teacher
+  </select>
+  <insert id="insertTeacher" keyColumn="teacher_id" keyProperty="teacherId" parameterType="xyz.zfdu.boot.mybatis.domain.Teacher" useGeneratedKeys="true">
+    INSERT INTO `t_teacher` (`teacher_name`, `clazz_id`) VALUES (#{teacherName,jdbcType=VARCHAR},#{clazzId,jdbcType=INTEGER})
+  </insert>
+</mapper>
